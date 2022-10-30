@@ -1,10 +1,3 @@
-# la formula para calcular el peso en otro planeta es: (pt / gt) * gop = peso en otro planeta.
-# pt = peso en la tierra
-# gt = gravedad de la tierra
-# gop = gravedad de otro planeta
-# peso en otro planeta = (pt/gt)*gop
-
-import getpass
 from ast import keyword
 from pydoc import plainpager
 
@@ -24,22 +17,29 @@ cuerposCelestes = {
 
 }
 
-print('\nEste programa te mostrara tu peso en el planeta que selecciones de la lista inferior\n')
-print(list(cuerposCelestes.keys()))
+again = 'si'
 
-optionU = input(
-    '\nIngresa el nombre de uno de los cuerpos celestes que aparecen en la parte superior => ').title()
-pesoU = float(input('\nIngresa tu peso actual => '))
-resultado = 0.0
+while again == 'si':
 
-while optionU not in cuerposCelestes.keys():
-    print('\n')
+    print('\nEste programa te mostrara tu peso en el planeta que selecciones de la lista inferior\n')
     print(list(cuerposCelestes.keys()))
+
     optionU = input(
-        '\nAsegúrate de haber ingresado correctamente el nombre de uno de los cuerpos celestes que aparecen en la parte superior => ').title()
+        '\nIngresa el nombre de uno de los cuerpos celestes que aparecen en la parte superior => ').title()
+    pesoU = float(input('\nIngresa tu peso actual => '))
+    resultado = 0.0
 
-resultado = round(
-    (pesoU/cuerposCelestes['La Tierra'])*cuerposCelestes.get(optionU), 2)
-print(f'\nTu peso en {optionU} es de: {resultado} Kg')
+    while optionU not in cuerposCelestes.keys():
+        print('\n')
+        print(list(cuerposCelestes.keys()))
+        optionU = input(
+            '\nAsegúrate de haber ingresado correctamente el nombre de uno de los cuerpos celestes que aparecen en la parte superior => ').title()
 
-getpass.getpass('press enter')
+    resultado = round(
+        (pesoU/cuerposCelestes['La Tierra'])*cuerposCelestes.get(optionU), 2)
+    print(f'\nTu peso en {optionU} es de: {resultado} Kg')
+
+    again = input('\nsi quieres probar con otro planeta escribe "si" => ')
+    print('\n')
+    print('\n')
+    print('\n')
