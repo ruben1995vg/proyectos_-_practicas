@@ -39,7 +39,7 @@ while again == 's':
     while g_u not in g.keys():
         print('\n')
         print(list(g.keys()))
-        optionU = input(
+        g_u = input(
             '\nAsegúrate de haber ingresado correctamente el nombre de uno de los cuerpos celestes que aparecen en la parte superior => ').title()
 
     print(
